@@ -56,8 +56,7 @@ class Invitation {
         this.locationEl.text(newLocation);
     }
 
-    changeBackgroundColor(evt) {
-        let newColor = evt.target.
+    changeBackgroundColor(newColor) {
         this.container.css('background-color', newColor)
     }
 }
@@ -104,5 +103,10 @@ $('#end-time').on('click', function () {
 $('#font').on('change', function () {
     let userFont = $('#font').val()
     invitation.changeFont(userFont)
+})
+
+$('button').on('click', function (evt) {
+
+    invitation.changeBackgroundColor($(evt.target).data("color"));
 })
 
